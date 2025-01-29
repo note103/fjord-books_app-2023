@@ -30,4 +30,21 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  notices:
+    book:
+      create: Book was successfully created.
+      update: Book was successfully updated.
+      destroy: Book was successfully destroyed.
+  helpers:
+    submit:
+      create: Create
+      update: Update
+      destroy: Destroy this book
+    links:
+      books:
+        show: Show this book
+        back: Back to books
+        new: Create a new book
+        edit: Edit this book
+    utility:
+      switch_language: Switch to Japanese
