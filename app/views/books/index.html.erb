@@ -2,6 +2,11 @@
 
 <h1><%= t('helpers.titles.books.books') %></h1>
 
+<div id="locale-switcher">
+  <% other_locale = I18n.locale == :ja ? :en : :ja %>
+  <%= link_to t('helpers.utility.switch_language'), url_for(locale: other_locale) %>
+</div>
+
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
