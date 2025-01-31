@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= t('helpers.titles.books.books') %></h1>
+<h1><%= t('helpers.titles.book.index') %></h1>
 
 <div id="locale-switcher">
   <% other_locale = I18n.locale == :ja ? :en : :ja %>
@@ -11,9 +11,9 @@
   <% @books.each do |book| %>
     <%= render book %>
     <p>
-      <%= link_to t('helpers.links.books.show'), book %>
+      <%= link_to t('helpers.links.book.show'), book %>
     </p>
   <% end %>
 </div>
 
-<%= link_to t('helpers.links.books.new'), new_book_path %>
+<%= link_to t('helpers.links.book.new'), new_book_path %>
