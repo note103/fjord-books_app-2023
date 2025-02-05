@@ -1,9 +1,9 @@
-<h1><%= t('helpers.titles.book.new') %></h1>
+<h1><%= t('helpers.titles.new', model: Book.model_name.human) %></h1>
 
 <%= render "form", book: @book %>
 
 <br>
 
 <div>
-  <%= link_to t('helpers.links.book.back'), books_path %>
+  <%= link_to t('helpers.links.back', model: Book.model_name.human), books_path %>
 </div>

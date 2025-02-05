@@ -1,6 +1,9 @@
 ---
 ja:
   notices:
+    create: "%{model}が作成されました。"
+    update: "%{model}が更新されました。"
+    destroy: "%{model}が削除されました。"
   helpers:
     titles:
       book:
@@ -15,10 +18,9 @@ ja:
       update: 更新する
       destroy: 削除する
     links:
-      book:
-        show: この本を見る
-        back: 本の一覧に戻る
-        new: 新しい本を登録する
-        edit: この本を編集する
+      show: "この%{model}を見る"
+      back: "書籍一覧に戻る"
+      new: "新しい%{model}を登録する"
+      edit: "この%{model}を編集する"
     utility:
       switch_language: 英語表示に切り替える
