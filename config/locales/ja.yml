@@ -18,4 +18,4 @@ ja:
       new: "新しい%{model}を登録する"
       edit: "この%{model}を編集する"
     utility:
-      switch_language: 英語表示に切り替える
+      switch_language: Switch to English

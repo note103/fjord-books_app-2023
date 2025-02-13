@@ -18,4 +18,4 @@ en:
       new: "Create a new %{model}"
       edit: "Edit this %{model}"
     utility:
-      switch_language: Switch to Japanese
+      switch_language: 日本語に切り替える
