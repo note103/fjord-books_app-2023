@@ -1,0 +1,21 @@
+ja:
+  notices:
+    create: "%{model}が作成されました。"
+    update: "%{model}が更新されました。"
+    destroy: "%{model}が削除されました。"
+  helpers:
+    titles:
+      index: "書籍一覧"
+      edit: "書籍編集"
+      new: "書籍登録"
+    submit:
+      create: 登録する
+      update: 更新する
+      destroy: 削除する
+    links:
+      show: "この%{model}を見る"
+      back: "書籍一覧に戻る"
+      new: "新しい%{model}を登録する"
+      edit: "この%{model}を編集する"
+    utility:
+      switch_language: Switch to English
