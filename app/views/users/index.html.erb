@@ -3,4 +3,6 @@
   <% @users.each do |user| %>
     <li><%= link_to user.email, user_path(user) %></li>
   <% end %>
-</ul
+</ul>
+
+<%= paginate @users %>
