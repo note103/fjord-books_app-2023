@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+DUMMY_COUNT = 50
+
 print '開発環境のデータをすべて削除して初期データを投入します。よろしいですか？[Y/n]: ' # rubocop:disable Rails/Output
 unless $stdin.gets.chomp.casecmp('Y').zero?
   puts '中止しました。' # rubocop:disable Rails/Output
@@ -33,12 +35,26 @@ Book.create!(
   picture: picture_file('erd.jpg')
 )
 
-50.times do
+DUMMY_COUNT.times do
   Book.create!(
     title: Faker::Book.title,
     memo: Faker::Book.genre,
     author: Faker::Book.author,
     picture: picture_file('no-image.png')
+  )
+end
+
+User.destroy_all
+
+(1..DUMMY_COUNT).each do |i|
+  email = "user#{i}@example.com"
+  User.create!(
+    email:,
+    password: 'p123456',
+    password_confirmation: 'p123456',
+    postal_code: Faker::Address.postcode,
+    address: Faker::Address.full_address,
+    bio: Faker::Lorem.paragraph
   )
 end
 
