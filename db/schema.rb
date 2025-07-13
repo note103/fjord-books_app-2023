@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_07_10_152046) do
+ActiveRecord::Schema[7.0].define(version: 2025_07_13_154553) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.text "memo"
@@ -31,6 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_07_10_152046) do
     t.string "postal_code"
     t.string "address"
     t.text "bio"
+    t.string "username"
+    t.string "full_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

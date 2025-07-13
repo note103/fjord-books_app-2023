@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    custom_keys = %i[postal_code address bio]
+    custom_keys = %i[username full_name postal_code address bio]
     devise_parameter_sanitizer.permit(:sign_up, keys: custom_keys)
     devise_parameter_sanitizer.permit(:account_update, keys: custom_keys)
   end
