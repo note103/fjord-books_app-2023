@@ -10,4 +10,6 @@
     <%= link_to t('views.common.edit', name: User.model_name.human), edit_user_registration_path %> |
   <% end %>
   <%= link_to t('views.common.back', name: i18n_pluralize(User.model_name.human.downcase)), users_path %>
+
+  <%= button_to t('devise.registrations.edit.cancel_my_account'), registration_path(@user), data: { turbo_confirm: t('devise.registrations.edit.are_you_sure') }, method: :delete %>
 </nav>
