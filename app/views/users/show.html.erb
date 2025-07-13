@@ -1,5 +1,6 @@
-<h1><%= @user.email %></h1>
-<p>ID: <%= @user.id %></p>
+<h1><%= @user.username %></h1>
+<p><%= t('activerecord.attributes.user.full_name') %>: <%= @user.full_name %></p>
+<p><%= t('activerecord.attributes.user.email') %>: <%= @user.email %></p>
 <p><%= t('activerecord.attributes.user.postal_code') %>: <%= @user.postal_code %></p>
 <p><%= t('activerecord.attributes.user.address') %>: <%= @user.address %></p>
 <p><%= t('activerecord.attributes.user.bio') %>: <%= @user.bio %></p>
