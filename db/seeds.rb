@@ -48,9 +48,9 @@ end
 User.destroy_all
 
 DUMMY_USER_COUNT.times do |i|
-  email = i.zero? ? 'user@example.com' : "user#{i}@example.com"
+  i = '' if i.zero? # `user0` というユーザー名は違和感があるため、0を空文字に置き換え
   User.create!(
-    email:,
+    email: "user#{i}@example.com",
     username: Faker::Internet.username(specifier: 5..8),
     full_name: Faker::Name.name,
     password: 'p123456',
