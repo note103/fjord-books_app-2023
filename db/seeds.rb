@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+DUMMY_BOOK_COUNT = 50
+DUMMY_USER_COUNT = 30
+
 print '開発環境のデータをすべて削除して初期データを投入します。よろしいですか？[Y/n]: ' # rubocop:disable Rails/Output
 unless $stdin.gets.chomp.casecmp('Y').zero?
   puts '中止しました。' # rubocop:disable Rails/Output
@@ -33,12 +36,28 @@ Book.create!(
   picture: picture_file('erd.jpg')
 )
 
-50.times do
+DUMMY_BOOK_COUNT.times do
   Book.create!(
     title: Faker::Book.title,
     memo: Faker::Book.genre,
     author: Faker::Book.author,
     picture: picture_file('no-image.png')
+  )
+end
+
+User.destroy_all
+
+DUMMY_USER_COUNT.times do |i|
+  i = '' if i.zero? # `user0` というユーザー名は違和感があるため、0を空文字に置き換え
+  User.create!(
+    email: "user#{i}@example.com",
+    username: Faker::Internet.username(specifier: 5..8),
+    full_name: Faker::Name.name,
+    password: 'p123456',
+    password_confirmation: 'p123456',
+    postal_code: Faker::Address.postcode,
+    address: "#{Faker::Address.state}#{Faker::Address.city}#{Faker::Address.street_name}#{rand(1..9)}-#{rand(1..99)}-#{rand(1..9)}",
+    bio: "こんにちは。好きなジブリのキャラクターは#{Faker::JapaneseMedia::StudioGhibli.character}です。好きな動物は#{Faker::Creature::Animal.name}で、好きな寿司ネタは#{Faker::Food.sushi}です。"
   )
 end
 

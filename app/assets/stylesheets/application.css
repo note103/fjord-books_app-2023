@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ 
+.alert {
+    color: var(--global-danger-c);
+}
+.notice {
+    color: var(--global-success-c);
+}
